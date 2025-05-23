@@ -15,12 +15,9 @@ internal partial class Program
         {
             int messageSize = Size();
             byte[] buffer = new byte[sizeof(int) + messageSize];
-            
-            int offset = 0;
-            byte[] messageSizeInBytes = new byte[sizeof(int)];
 
-            BinaryPrimitives.WriteInt32BigEndian(messageSizeInBytes, messageSize);
-            Buffer.BlockCopy(messageSizeInBytes, 0, buffer, offset, messageSizeInBytes.Length);
+            int offset = 0;
+            Buffer.BlockCopy(MessageSizeInBytes, 0, buffer, offset, MessageSizeInBytes.Length);
             offset += Marshal.SizeOf(messageSize);
 
             Buffer.BlockCopy(Header.CorrelationIdInBytes, 0, buffer, offset, Header.CorrelationIdInBytes.Length);
