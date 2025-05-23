@@ -7,7 +7,7 @@ internal partial class Program
 {
     public class KafkaApiDescription : ISizable
     {
-        private readonly object _instanceLock = new object();
+        private static readonly object _instanceLock = new object();
         private byte[] _apiKeyInBytes = [];
         private byte[] _minApiVersionInBytes = [];
         private byte[] _maxApiVersionInBytes = [];

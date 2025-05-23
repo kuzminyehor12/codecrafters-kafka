@@ -7,7 +7,7 @@ internal partial class Program
 {
     public abstract class KafkaResponseBody : ISizable
     {
-        private readonly object _bodyLock = new object();
+        private static readonly object _bodyLock = new object();
         private byte[] _errorCodeInBytes = [];
         private byte[] _throttleTimeInBytes = [];
 

@@ -6,7 +6,7 @@ internal partial class Program
 {
     public class KafkaResponseHeader : ISizable
     {
-        private readonly object _headerLock = new object();
+        private static readonly object _headerLock = new object();
 
         private byte[] _correlationIdInBytes = [];
 
